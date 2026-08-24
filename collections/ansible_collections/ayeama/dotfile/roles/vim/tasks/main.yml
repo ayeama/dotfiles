@@ -1,0 +1,21 @@
+- name: Install system packages
+  ansible.builtin.package:
+    state: present
+    name: vim
+  become: true
+
+- name: Configure
+  ansible.builtin.copy:
+    dest: "{{ ansible_user_dir }}/.vimrc"
+    content: |
+      syntax on
+      set number
+      set autoindent
+      set smartindent
+      set smarttab
+      set expandtab
+      set tabstop=4
+      set shiftwidth=4
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: '0644'

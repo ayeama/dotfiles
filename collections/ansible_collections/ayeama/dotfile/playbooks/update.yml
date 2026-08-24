@@ -1,0 +1,11 @@
+- hosts: all
+  gather_facts: true
+  serial:
+    - 1
+    - 100%
+  tasks:
+    - name: Update system packages
+      ansible.builtin.package:
+        state: latest
+        name: "*"
+      become: true

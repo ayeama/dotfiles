@@ -1,0 +1,10 @@
+namespace: ayeama
+name: dotfile
+version: 0.1.0
+readme: README.md
+authors:
+  - ayeama
+tags: []
+dependencies:
+  - community.general: '>=13.3.0'
+repository: github.com/ayeama/dotfiles
